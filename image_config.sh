@@ -32,40 +32,35 @@ elif [[ ! -f ssh.pub ]]; then
 	echo
 	echo "Failed."
 else
-	newname=$2
 	offset=$(($(fdisk -l $1 |awk '$7=="Linux"{print $2}')*512))
 
 	mkdir tmpmnt
 	mount -o loop,offset=${offset} $1 tmpmnt
 
-	# Step 1
-	echo "${newname}.local" > tmpmnt/etc/hostname
-	echo "Contents of ${1}/etc/hostname:"
-	cat tmpmnt/etc/hostname
-	echo
+	echo "$2.local" > tmpmnt/etc/hostname
+	sed -i "s/raspberrypi/$2 $2.local/g" tmpmnt/etc/hosts
+	echo "Updated hostname"
 
-	# Step 2
-	sed -i "s/raspberrypi/${newname} ${newname}.local/g" tmpmnt/etc/hosts
-	echo "Contents of ${1}/etc/hosts:"
-	cat tmpmnt/etc/hosts
-	echo
-
-	# Step 3
 	mkdir tmpmnt/home/pi/.ssh
 	cp ssh.pub tmpmnt/home/pi/.ssh/authorized_keys
 	touch tmpmnt/boot/ssh
 	echo "Configured SSH"
 
-	# Step 4
 	if [[ -f wifi.txt ]]
 	then
+		sed -i "s/GB/US/" tmpmnt/etc/wpa_supplicant/wpa_supplicant.conf
 		cat wifi.txt >> tmpmnt/etc/wpa_supplicant/wpa_supplicant.conf
 		echo "Configured WiFi"
+		# For outdated Raspbian images only:
+		# echo -e "auto wlan0\nallow-hotplug wlan0\niface wlan0 inet manual\nwpa-conf /etc/wpa_supplicant/wpa_supplicant.conf" >> tmpmnt/etc/network/interfaces
 	fi
 
 	sync
 	umount tmpmnt
 	rm -rf tmpmnt
-	echo "Done. With avahi or Bonjour installed on this host,"
-	echo "the RPi should be accessible by SSH at $2.local"
+	echo "Done. To inspect my work, please"
+	echo "mount -o loop,offset=${offset} $1 /mnt"
+	echo
+	echo "With avahi or Bonjour installed on this host, your"
+	echo "booted RPi should be accessible by SSH at $2.local"
 fi
