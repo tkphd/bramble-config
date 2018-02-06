@@ -2,15 +2,18 @@
 
 Configuration files to generate a [bramble][bra], or
 cluster of [Raspberry Pi 3][rpi] single-board computers
-running [Raspbian][rsp] and administered using [Ansible][ans].
+running [Raspbian][rsp] and managed using [Ansible][ans].
 
 ## *Caveat Emptor*
 
-A bramble is useful as an educational tool for IT
-infrastructure testing, especially [queuing system][slr],
-[file system][zfs], and [workflow][ans] research. It is
-***not*** intended to perform useful computational tasks:
-there are [better][mms] [options][hpc].
+Each computer in the bramble has a 4-core [CPU][cpu] at
+1.2 GHz, 1 GB RAM, a micro SD slot for boot media, four
+USB 2.0 ports, 100 Mbit Ethernet, and WiFi. Creating a
+cluster is instructive and useful for IT infrastructure
+testing, especially [queuing system][slr], [file system][zfs],
+and [container][sin] research. It is ***not*** intended
+to perform useful computational tasks: there are [better][mms]
+[options][hpc] for that.
 
 ## Layout
 
@@ -52,11 +55,13 @@ This is, after all, meant to be fun :-)
 
 [ans]: https://www.ansible.com/
 [bra]: https://www.jeffgeerling.com/blog/2015/how-build-your-own-raspberry-pi-cluster-bramble
+[cpu]: https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2837/README.md
 [hpc]: https://github.com/usnistgov/hiperc
 [lst]: http://lustre.org/
 [mms]: https://github.com/mesoscale/mmsp
 [nod]: https://www.cise.ufl.edu/research/ParallelPatterns/glossary.htm#glossary:node
 [rpi]: https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
 [rsp]: https://raspbian.org/
+[sin]: http://singularity.lbl.gov/
 [slr]: https://slurm.schedmd.com/
 [zfs]: http://zfsonlinux.org/
