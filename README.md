@@ -11,9 +11,10 @@ Each computer in the bramble has a 4-core [CPU][cpu] at
 USB 2.0 ports, 100 Mbit Ethernet, and WiFi. Creating a
 cluster is instructive and useful for IT infrastructure
 testing, especially [queuing system][slr], [file system][zfs],
-and [container][sin] research. It is ***not*** intended
-to perform useful computational tasks: there are [better][mms]
-[options][hpc] for that.
+and [container][sin] research.
+
+It is ***not*** intended to perform useful computational tasks.
+There are [better][mms] [tools][hpc] for that.
 
 ## Layout
 
