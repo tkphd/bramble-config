@@ -1,3 +1,5 @@
 *.img
+*.pdf
 *.pub
 *.txt
+ansible/hosts

@@ -1,0 +1,11 @@
+---
+- hosts: all
+  name: reboot
+  become: true
+  remote_user: pi
+  tasks:
+  - name: Restart server
+    command: /sbin/shutdown -r +1
+    async: 0
+    poll: 0
+    ignore_errors: true

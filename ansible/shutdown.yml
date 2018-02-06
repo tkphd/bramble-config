@@ -1,0 +1,11 @@
+---
+- hosts: all
+  name: shutdown
+  become: true
+  remote_user: pi
+  tasks:
+  - name: Shutdown bramble
+    command: /sbin/shutdown now
+    async: 0
+    poll: 0
+    ignore_errors: true

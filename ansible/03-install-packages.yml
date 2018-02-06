@@ -1,0 +1,18 @@
+---
+- hosts: all
+  name: install packages
+  become: true
+
+  tasks:
+  - name: update packages
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+      upgrade: dist
+  - name: install packages
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+      - clamav
+      - git

@@ -1,0 +1,15 @@
+---
+- hosts: all
+  name: update password
+  become: true
+  remote_user: pi
+
+  vars:
+    # Use `mkpasswd --method=SHA-512` to create salted password
+    pi_pass: $6$8VSYcKynH$5rz7riwsjudllvpGjvbpBLycgvEP4hZQ/Nq0TGNAjpwBUnCPwxvJ4XpuLhfdA7OrOaxb/1yJoBGWu3e3FgJnG0
+
+  tasks:
+  - user:
+      name=pi
+      update_password=always
+      password={{pi_pass}}

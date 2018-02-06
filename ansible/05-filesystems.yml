@@ -1,0 +1,23 @@
+---
+- hosts: all
+  name: set filesystems
+  become: true
+
+  tasks:
+    - name: get architecture
+      shell: uname -a
+      ignore_errors: yes
+      register: uname_result
+    - name: update packages
+      apt:
+            update_cache: yes
+            cache_valid_time: 3600
+                  upgrade: dist
+    - name: install packages
+      apt:
+        name={{ item }}
+              state=installed
+      with_items:
+        - linux-headers-{{ uname_result }}
+        - zfs-dkms
+        - zfsutils-linux

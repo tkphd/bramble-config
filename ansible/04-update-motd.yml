@@ -1,0 +1,13 @@
+---
+- hosts: all
+  name: customize motd
+  become: true
+
+  tasks:
+  - copy:
+      src: ./motd.txt
+      dest: /etc/motd
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
