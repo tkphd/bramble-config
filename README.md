@@ -17,25 +17,25 @@ there are [better][mms] [options][hpc].
 The files contained in this repository will be most useful to you
 if your bramble contains at least three [nodes][nod], for example:
 
-###  `head`
+####  `head`
 The primary point of contact between your Bramble and the outside
 network, this node serves administrative duties, only. Configured
 with an 8 GB microSD card and 16 GB USB stick.
 
-### `data`
+#### `data`
 The primary point of contact for network data stores, this node
 serves data and database duties, only. Configured with an 8 GB
 microSD card and 64 GB USB stick.
 
-### `r1n1`
-The first node (`n1`) on the first rack (`n1`) serves computational
+#### `r1n1`
+The first node (`n1`) on the first rack (`r1`) serves computational
 duties, as well as light data service for other nodes on its rack
 when a distributed filesystem (*e.g.*, [Lustre][lst]) is installed.
-Configured with an 8GB microSD card and 16GB USB stick.
+Configured with an 8 GB microSD card and 16 GB USB stick.
 
-### `r1nX`
+#### `r1nX`
 The balance of nodes on the first rack (`r1`) serve computational duty,
-only. Configured with an 8GB microSD card and 16GB USB stick.
+only. Configured with an 8 GB microSD card and 16 GB USB stick.
 
 ### Interconnect
 To reduce latency, the nodes have wired Ethernet connections to a Gigabit
@@ -45,9 +45,9 @@ to IP is `100 + 10*rack + node`. So, for example, `r1n1` is `192.168.3.111`,
 `r1n4` is `192.168.3.114`; `head`, or `r0n1`, is `192.168.3.101`, and
 `data` is `192.168.3.102`. For convenience, and software updates, WiFi
 is also enabled on all nodes. A more representative configuration for
-a HPC cluster would funnel traffic through `head`, only, but this
-introduces unnecessary complications to the setup. This is, after all,
-meant to be fun :-)
+a HPC cluster would funnel traffic through `head`, or a router at
+`192.168.3.1`, but this introduces unnecessary complications to the setup.
+This is, after all, meant to be fun :-)
 
 
 [ans]: https://www.ansible.com/
