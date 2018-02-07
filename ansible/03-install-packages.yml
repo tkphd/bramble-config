@@ -26,3 +26,5 @@
     with_items:
       - clamav
       - git
+      - htop
+      - tmux

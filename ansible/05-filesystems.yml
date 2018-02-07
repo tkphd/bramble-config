@@ -10,24 +10,64 @@
 # https://github.com/tkphd/bramble-config
 
 - hosts: all
-  name: set filesystems
+  name: install filesystem support
   become: true
 
   tasks:
-    - name: get architecture
-      shell: uname -a
-      ignore_errors: yes
-      register: uname_result
-    - name: update packages
-      apt:
-            update_cache: yes
-            cache_valid_time: 3600
-                  upgrade: dist
-    - name: install packages
-      apt:
-        name={{ item }}
-              state=installed
-      with_items:
-        - linux-headers-{{ uname_result }}
-        - zfs-dkms
-        - zfsutils-linux
+  - name: update packages
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+      upgrade: dist
+  - name: install BtrFS
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+    - btrfs-progs
+    - btrfs-tools
+  - name: install XFS
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+    - xfsprogs
+    - xfsdump
+  - name: install ZFS
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+    - zfs-dkms
+    # - zfsutils-linux
+  - name: install GFS2
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+    - gfs2-utils
+  - name: install GlusterFS
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+    - glusterfs-client
+    - glusterfs-server
+    - glusterfs-common
+  - name: install Lustre
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+    - linux-patch-lustre
+    - lustre-source
+  - name: install NFS
+    apt:
+      name={{ item }}
+      state=installed
+    with_items:
+    - nfs-common
+    - nfstrace
+    - nfswatch
+      
+
