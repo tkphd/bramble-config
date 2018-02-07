@@ -1,5 +1,6 @@
 *.img
 *.pdf
 *.pub
+*.retry
 *.txt
 ansible/hosts

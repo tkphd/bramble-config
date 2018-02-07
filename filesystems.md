@@ -9,12 +9,12 @@
 
 ## Scalable Disk File Systems
 
-| System | Raspbian Packages           | Partition       | Mount           |
-| ------ | --------------------------- | --------------- | --------------- |
-| BtrFS  | `btrfs-progs btrfs-tools`   | `/dev/sda2`     | `/mnt/btr`      |
-| EXT4   | `e2fsprogs`                 | sd card         | `/`             |
-| XFS    | `xfsprogs xfsdump`          | `/dev/sda[1,5]` | `/mnt/xfs[-x]   |
-| ZFS    | `zfs-dkms ~zfsutils-linux~` | `/dev/sda[3,4]` | `/mnt/zfs[-x]`  |
+| System | Raspbian Packages           | Partition       | Mount          |
+| ------ | --------------------------- | --------------- | -------------- |
+| BtrFS  | `btrfs-progs btrfs-tools`   | `/dev/sda2`     | `/mnt/btr`     |
+| EXT4   | `e2fsprogs`                 | sd card         | `/`            |
+| XFS    | `xfsprogs xfsdump`          | `/dev/sda[1,5]` | `/mnt/xfs[-x]` |
+| ZFS    | `zfs-dkms ~zfsutils-linux~` | `/dev/sda[3,4]` | `/mnt/zfs[-x]` |
 
 *Note*: data hosts a 64 GB USB stick, with a 16 GB partition (`/dev/sda5`)
         committed to the NFS share. Mount points marked `-x`, *e.g.*
