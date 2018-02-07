@@ -60,7 +60,7 @@ a HPC cluster would funnel traffic through `head`, or a router at
 `192.168.3.1`, but this introduces unnecessary complications to the setup.
 This is, after all, meant to be fun :-)
 
-[![https://i.creativecommons.org/p/mark/1.0/80x15.png]][cc0]
+[![Public Domain](https://i.creativecommons.org/p/mark/1.0/80x15.png)][cc0]
 
 [ans]: https://www.ansible.com/
 [brm]: https://www.jeffgeerling.com/blog/2015/how-build-your-own-raspberry-pi-cluster-bramble

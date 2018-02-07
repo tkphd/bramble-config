@@ -1,3 +1,5 @@
+---
+
 #       .                               .      .;
 #     .'                              .'      .;'
 #    ;-.    .;.::..-.    . ,';.,';.  ;-.     .;  .-.
@@ -7,7 +9,6 @@
 
 # https://github.com/tkphd/bramble-config
 
----
 - hosts: all
   name: reboot
   become: true
