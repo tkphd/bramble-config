@@ -1,5 +1,14 @@
 #!/bin/bash
 
+#       .                               .      .;
+#     .'                              .'      .;'
+#    ;-.    .;.::..-.    . ,';.,';.  ;-.     .;  .-.
+#   ;   ;   .;   ;   :   ;;  ;;  ;; ;   ;   :: .;.-'
+# .'`::'`-.;'    `:::'-'';  ;;  ';.'`::'`-_;;_.-`:::'
+#                      _;        `-'
+
+# https://github.com/tkphd/bramble-config
+
 # Run this script with privileges on a Raspbian
 # image [first argument] before writing to the
 # SD card to do the following:

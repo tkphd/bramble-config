@@ -1,6 +1,13 @@
-# bramble-config
+```
+      .                               .      .;
+    .'                              .'      .;'
+   ;-.    .;.::..-.    . ,';.,';.  ;-.     .;  .-.
+  ;   ;   .;   ;   :   ;;  ;;  ;; ;   ;   :: .;.-'
+.'`::'`-.;'    `:::'-'';  ;;  ';.'`::'`-_;;_.-`:::'
+                     _;        `-'
+```
 
-Configuration files to generate a [bramble][bra], or
+Configuration files to generate a [bramble][brm], or
 cluster of [Raspberry Pi 3][rpi] single-board computers
 running [Raspbian][rsp] and managed using [Ansible][ans].
 
@@ -53,9 +60,11 @@ a HPC cluster would funnel traffic through `head`, or a router at
 `192.168.3.1`, but this introduces unnecessary complications to the setup.
 This is, after all, meant to be fun :-)
 
+[![https://i.creativecommons.org/p/mark/1.0/80x15.png]][cc0]
 
 [ans]: https://www.ansible.com/
-[bra]: https://www.jeffgeerling.com/blog/2015/how-build-your-own-raspberry-pi-cluster-bramble
+[brm]: https://www.jeffgeerling.com/blog/2015/how-build-your-own-raspberry-pi-cluster-bramble
+[cc0]: https://creativecommons.org/publicdomain/zero/1.0/
 [cpu]: https://www.raspberrypi.org/documentation/hardware/raspberrypi/bcm2837/README.md
 [hpc]: https://github.com/usnistgov/hiperc
 [lst]: http://lustre.org/
